@@ -1,35 +1,29 @@
 # JiraNearMe
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/jira_near_me`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+JiraNearMe is a command line interface that ease the pain of jira ticket mnagement
+after each release.
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'jira-near-me'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
+use the command below to install gem
 
     $ gem install jira-near-me
 
 ## Usage
 
-TODO: Write usage instructions here
+You can use JiraNearMe for both marketplaces and core app. There are 3 available commands:
 
-## Development
+- `prepare` - moves all tickets that are about to releae to Ready for release state. This command is reserved for core application.
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+      $ jira-near-me prepare
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+- `release` - creates proper fixVersion based on last tag and gien region, then assigns all tickets to that version. Available parameters are:
 
-## Contributing
+      $ jira-near-me release
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/mdyd-dev/jira-near-me.
+  - `skip_tag_create=true` if you've already created tag manually. By default tag will be generated automatically.
+  - `region` when core app is released. Asked when skipped.
+
+- `release_version` - release versions in jira and post release notes to slack.
+
+      $ jira-near-me release_version

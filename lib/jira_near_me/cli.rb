@@ -7,12 +7,13 @@ module JiraNearMe
   class CLI < Thor
 
     desc 'prepare', 'Prepares jira tickets for the release'
-    def prepare(region)
+    def prepare
       releaser.prepare!
     end
 
     desc 'release', 'Performs the release on Jira. Fix version will be assigned to all projects and tickets.'
     method_option 'region', required: false, type: :string, aliases: :r, desc: 'Region for the release'
+    method_option 'skip-tag-create', required: false, type: :string, aliases: :skip, desc: 'Region for the release'
     def release
       releaser.release!
     end
