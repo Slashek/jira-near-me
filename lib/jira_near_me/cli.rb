@@ -8,7 +8,7 @@ module JiraNearMe
 
     desc 'prepare', 'Prepares jira tickets for the release'
     def prepare
-      releaser.prepare!
+      releaser.prepare
     end
 
     desc 'release', 'Performs the release on Jira. Fix version will be assigned to all projects and tickets.'
