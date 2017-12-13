@@ -1,5 +1,4 @@
 require 'thor'
-require 'pry'
 require 'slack-notifier'
 require 'jira_near_me'
 
