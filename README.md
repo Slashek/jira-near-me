@@ -11,11 +11,7 @@ use the command below to install gem
 
 ## Usage
 
-You can use JiraNearMe for both marketplaces and core app. There are 3 available commands:
-
-- `prepare` - moves all tickets that are about to releae to Ready for release state. This command is reserved for core application.
-
-      $ jira-near-me prepare
+You can use JiraNearMe for both marketplaces and core app. There are 2 available commands:
 
 - `release` - creates proper fixVersion based on last tag and gien region, then assigns all tickets to that version. Available parameters are:
 
