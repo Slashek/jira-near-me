@@ -8,6 +8,12 @@ after each release.
 use the command below to install gem
 
     $ gem install jira-near-me
+    
+add ENV variable (preferably, add it to ~/.bash_profile or something like this) 
+
+    export SLACK_RELEASE_SERVICE=xxx
+
+(you can take proper value from https://nearme.slack.com/services/B2JGMA27M - find Webhook URL and copy everything after https://hooks.slack.com/services/ - first character should be T)
 
 ## Usage
 
