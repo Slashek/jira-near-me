@@ -138,7 +138,8 @@ module JiraNearMe
     def find_projects
       projects = []
       projects_keys_with_grouped_issues_keys.each do |project_key, issues_keys|
-        projects << Project.new(@client, find_project(project_key), issues_keys)
+        jira_project = find_project(project_key)
+        projects << Project.new(@client, jira_project, issues_keys) if jira_project
       end
       projects
     end
