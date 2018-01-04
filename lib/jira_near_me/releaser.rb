@@ -21,11 +21,7 @@ module JiraNearMe
       print_commit_info
       print_pre_release_message
       assign_fix_version
-    end
-
-    # Moves all jira cards to 'ready to test'
-    def prepare
-      projects.each(&:prepare)
+      release_version!
     end
 
     # Triggered by deploy script
@@ -176,8 +172,14 @@ module JiraNearMe
       end
       print_log "\nTotal number of jira issues to process: #{@total_issues_count}"
       print_log "\nFix version #{@version} will be assigned to all projects and issues.\n"
-      print_log 'Do you want to proceed? [y]'
 
+      print_user_confirmation
+    end
+
+    def print_user_confirmation
+      return if ENV['skip_confirmation'] == 'true'
+
+      print_log 'Do you want to proceed? [y]'
       user_input = STDIN.gets.strip
       if user_input.strip != 'y'
         print_log 'ABORT'

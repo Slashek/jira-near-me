@@ -43,7 +43,7 @@ module JiraNearMe
 
       def save
         `git tag -a #{@tag} -m '#{@description}'`
-        # `git push --tags`
+        `git push --tags`
       end
     end
   end

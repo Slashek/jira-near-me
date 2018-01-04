@@ -34,6 +34,8 @@ module JiraNearMe
       end
 
       def ask_for_tag_creation
+        return true if ENV['skip_confirmation'] == 'true'
+
         print_log 'Would you like to create new tag? [y|n] \n'
         STDIN.gets.strip == 'y'
       end

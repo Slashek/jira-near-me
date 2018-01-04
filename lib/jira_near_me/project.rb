@@ -30,10 +30,6 @@ module JiraNearMe
       end
     end
 
-    def prepare
-      issues.each(&:move_to_ready_for_test)
-    end
-
     # We dont want to process NM-0000 keys as they do not
     # exist in Jira.
     def filter_keys(issue_keys)
