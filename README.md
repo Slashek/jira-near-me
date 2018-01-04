@@ -7,7 +7,7 @@ after each release.
 
 to install the gem type
 
-    $ gem install jira-near-me-0.1.2.gem
+    $ gem install jira-near-me-0.1.3.gem
 
 next, add ENV variable (preferably, add it to ~/.bash_profile or something like this)
 
@@ -29,6 +29,11 @@ Then you will be able to use JiraNearMe for both marketplaces and core app. Ther
 
       $ jira-near-me release
 
-  - `skip_tag_create=true` if you've already created tag manually. By default tag will be generated automatically.
+  - `skip-tag-create` if you've already created tag manually. By default tag will be generated automatically.
   - `region` when core app is released. Asked when skipped.
-  - `skip_confirmation` if you want to skip all CLI questions
+  - `skip-confirmation` if you want to skip all CLI questions
+
+
+For more information use
+
+      $ jira-near-me help

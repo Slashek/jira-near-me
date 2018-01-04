@@ -21,6 +21,8 @@ module JiraNearMe
     end
 
     def assign_version(version, description)
+      puts "Processing project: #{project}"
+
       ensure_version_present!(name: version, description: description)
       i = 0
       issues.each do |issue|
