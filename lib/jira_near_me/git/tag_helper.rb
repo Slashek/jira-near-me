@@ -1,4 +1,3 @@
-require 'pry'
 module JiraNearMe
   module Git
     class TagHelper

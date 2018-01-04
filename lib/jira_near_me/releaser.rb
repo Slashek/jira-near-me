@@ -8,12 +8,11 @@ module JiraNearMe
     JIRA_FORMAT = /^\A[a-zA-Z]{2,4}[\s-]\d{1,5}/
     TAG_OPTIONS = %w[skip_tag_create tag_type description].freeze
 
-    attr_reader :description, :region, :git_tag_helper, :tag_options,
+    attr_reader :description, :region, :tag_options,
                 :skip_confirmation
 
-    def_delegator :@git_tag_helper, :current_tag, :previous_tag, :current_tag_full_name
 
-    def initialize(options)
+    def initialize(options={})
       unless marketplace_release?
         @region = options[:region] || messanger.ask_for_region
         messanger.verify_region(@region)
@@ -102,6 +101,8 @@ module JiraNearMe
     def git_tag_helper
       @git_tag_helper ||= Git::TagHelper.new(marketplace_release: marketplace_release?)
     end
+    def_delegators :@git_tag_helper, :current_tag, :previous_tag, :current_tag_full_name
+
 
     def jira_commits
       @jira_commits ||= commits.select { |commit| commit =~ JIRA_FORMAT }
