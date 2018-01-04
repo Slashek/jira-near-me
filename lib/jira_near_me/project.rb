@@ -5,7 +5,7 @@ module JiraNearMe
     attr_reader :project, :client
     delegate :key, :name, to: :project
 
-    def initialize(client, project, issue_keys=[])
+    def initialize(client, project, issue_keys = [])
       @client = client
       @project = project
       @issues = find_project_issues(filter_keys(issue_keys)).map do |issue|
@@ -13,25 +13,36 @@ module JiraNearMe
       end.compact
     end
 
+    def assign_and_release_version(git_tag_helper)
+      name = git_tag_helper.current_tag_full_name
+      desc = git_tag_helper.tag_description
+
+      assign_version(name, desc)
+      release_version(name)
+    end
+
     def release_notes(fix_version_name)
       return unless (v = version(fix_version_name)).present?
 
       release_notes_url = "https://near-me.atlassian.net/secure/ReleaseNote.jspa?projectId=#{project.id}&version=#{v.id}"
-      "<a href='#{release_notes_url}'>Check #{project.name} #{JiraNearMe.used_for_marketplace? ? 'Frontend ' : ''}Release Notes</a>."
+      "<a href='#{release_notes_url}'>Check #{project.name} #{JiraNearMe.marketplace_release? ? 'Frontend ' : ''}Release Notes</a>."
     end
 
     def assign_version(version, description)
-      ensure_version_present!(name: version, description: description)
-      i = 0
-      issues.each do |issue|
-        i += 1
-        issue.assign_version(version)
-        puts "Version assigned to #{i}/#{issues_count}" if (i % 10).zero? || i == issues_count
-      end
-    end
+      puts "Processing project: #{name}"
 
-    def prepare
-      issues.each(&:move_to_ready_for_test)
+      ensure_version_present!(
+        name: version,
+        description: description
+      )
+
+      issues.each_with_index do |issue, index|
+        issue.assign_version(version)
+
+        counter = index + 1
+        next unless (counter % 10).zero? || counter == issues_count
+        puts "Version assigned to #{counter}/#{issues_count}"
+      end
     end
 
     # We dont want to process NM-0000 keys as they do not
@@ -69,11 +80,11 @@ module JiraNearMe
         if splitted_version.last == '0' && has_versions?
           previous_version = [splitted_version[0], splitted_version[1].to_i - 1, 0].join('.')
           old_version = version(previous_version)
-          if old_version
-            user_start_date = old_version.userReleaseDate
-          else
-            user_start_date = Time.current.strftime('%-d/%b/%y')
-          end
+          user_start_date = if old_version
+                              old_version.userReleaseDate
+                            else
+                              Time.current.strftime('%-d/%b/%y')
+                            end
         else
           user_start_date = Time.current.strftime('%-d/%b/%y')
         end
@@ -120,14 +131,12 @@ module JiraNearMe
     end
 
     def versions_before(current_tag)
-      versions.inject([[]]) do |results, version|
-        if version.name =~ Regexp.new("#{current_tag}")
-           results << []
-         else
-           results.last << version
+      versions.each_with_object([[]]) do |version, results|
+        if version.name.match?(Regexp.new(current_tag.to_s))
+          results << []
+        else
+          results.last << version
          end
-
-         results
       end.first
     end
 
@@ -135,7 +144,7 @@ module JiraNearMe
       @versions ||= project.versions || []
     end
 
-    def release_version!(tag)
+    def release_version(tag)
       if version(tag)
         version(tag).save(released: true)
         puts "Version #{tag} for project #{project.name} released."

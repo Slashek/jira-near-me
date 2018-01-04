@@ -3,6 +3,8 @@ require 'jira_near_me/releaser.rb'
 require 'jira_near_me/card_printer.rb'
 require 'jira_near_me/client.rb'
 require 'jira_near_me/project.rb'
+require 'jira_near_me/messanger.rb'
+require 'jira_near_me/region_option_parser.rb'
 require 'jira_near_me/issue.rb'
 require 'jira_near_me/slack_notifier.rb'
 require 'jira_near_me/git.rb'
@@ -11,7 +13,7 @@ require 'jira_near_me/errors/jira_near_me_error'
 module JiraNearMe
   MARKETPLACE_BUILDER_FOLDER = 'marketplace_builder'.freeze
 
-  def self.used_for_marketplace?
+  def self.marketplace_release?
     File.exists?(builder_folder)
   end
 
@@ -20,6 +22,8 @@ module JiraNearMe
   end
 
   def self.marketplace_name
-    `git remote -v | tail -1`.match(/\/([A-z-]*)\.git/)[1].gsub('-', ' ').capitalize
+    repository_regexp = Regexp.new(/mdyd-dev\/((\w|\-)*)(\.git\s|\s)\(push\)/)
+    repository_name = `git remote -v | tail -1`.match(repository_regexp)[1]
+    repository_name.tr('-', ' ').split.map(&:capitalize) * ' '
   end
 end

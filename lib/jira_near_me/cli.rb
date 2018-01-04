@@ -1,31 +1,43 @@
+# frozen_string_literal: true
+
 require 'thor'
-require 'slack-notifier'
 require 'jira_near_me'
+require 'pry'
 
 module JiraNearMe
+  # Command Line Interface see Thor gem for more information
   class CLI < Thor
+    desc 'release', 'Performs the release on Jira.
+      Fix version will be assigned to all projects and tickets.'
+    method_option 'region',
+                  required: false,
+                  type: :string,
+                  aliases: :r,
+                  desc: 'Region for the release'
+    method_option 'skip-tag-create',
+                  required: false,
+                  type: :string,
+                  aliases: :st,
+                  desc: 'Region for the release'
+    method_option 'skip-confirmation',
+                  required: false,
+                  type: :string,
+                  aliases: :sc,
+                  desc: 'Region for the release'
 
-    desc 'prepare', 'Prepares jira tickets for the release'
-    def prepare
-      releaser.prepare
-    end
-
-    desc 'release', 'Performs the release on Jira. Fix version will be assigned to all projects and tickets.'
-    method_option 'region', required: false, type: :string, aliases: :r, desc: 'Region for the release'
-    method_option 'skip-tag-create', required: false, type: :string, aliases: :skip, desc: 'Region for the release'
     def release
-      releaser.release!
+      releaser.release
     end
 
-    desc 'release_version', 'Release Fix Version.'
-    method_option 'region', type: :string, aliases: :r, desc: 'Region for the release'
-    def release_version
-      releaser.release_version!
+    def options
+      super.each_with_object({}) do |(key, value), memo|
+        memo[key.tr('-', '_').to_sym] = value
+      end
     end
 
     no_commands do
       def releaser
-        @jira_releaser ||= JiraNearMe::Releaser.new(region: options[:region])
+        @jira_releaser ||= JiraNearMe::Releaser.new(options)
       end
     end
   end

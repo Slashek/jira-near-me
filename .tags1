@@ -1,0 +1,25 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	0	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+JiraNearMe	/Users/leming/code/jira-near-me/lib/jira_near_me/project.rb	/^module JiraNearMe$/;"	module	line:3
+Project	/Users/leming/code/jira-near-me/lib/jira_near_me/project.rb	/^  class Project$/;"	class	line:4	class:JiraNearMe
+initialize	/Users/leming/code/jira-near-me/lib/jira_near_me/project.rb	/^    def initialize(client, project, issue_keys = [])$/;"	method	line:8	class:JiraNearMe.Project
+assign_and_release_version	/Users/leming/code/jira-near-me/lib/jira_near_me/project.rb	/^    def assign_and_release_version(git_tag_helper)$/;"	method	line:16	class:JiraNearMe.Project.initialize
+release_notes	/Users/leming/code/jira-near-me/lib/jira_near_me/project.rb	/^    def release_notes(fix_version_name)$/;"	method	line:24	class:JiraNearMe.Project.initialize
+assign_version	/Users/leming/code/jira-near-me/lib/jira_near_me/project.rb	/^    def assign_version(version, description)$/;"	method	line:31	class:JiraNearMe.Project.initialize
+filter_keys	/Users/leming/code/jira-near-me/lib/jira_near_me/project.rb	/^    def filter_keys(issue_keys)$/;"	method	line:50	class:JiraNearMe.Project.initialize
+issues	/Users/leming/code/jira-near-me/lib/jira_near_me/project.rb	/^    def issues$/;"	method	line:54	class:JiraNearMe.Project.initialize
+issues_count	/Users/leming/code/jira-near-me/lib/jira_near_me/project.rb	/^    def issues_count$/;"	method	line:58	class:JiraNearMe.Project.initialize
+find_project_issues	/Users/leming/code/jira-near-me/lib/jira_near_me/project.rb	/^    def find_project_issues(issue_keys)$/;"	method	line:62	class:JiraNearMe.Project.initialize
+find_project_issue	/Users/leming/code/jira-near-me/lib/jira_near_me/project.rb	/^    def find_project_issue(issue_key)$/;"	method	line:70	class:JiraNearMe.Project.initialize
+ensure_version_present!	/Users/leming/code/jira-near-me/lib/jira_near_me/project.rb	/^    def ensure_version_present!(name:, description:)$/;"	method	line:76	class:JiraNearMe.Project.initialize
+epic_hash	/Users/leming/code/jira-near-me/lib/jira_near_me/project.rb	/^    def epic_hash$/;"	method	line:108	class:JiraNearMe.Project
+has_versions?	/Users/leming/code/jira-near-me/lib/jira_near_me/project.rb	/^    def has_versions?$/;"	method	line:119	class:JiraNearMe.Project
+version	/Users/leming/code/jira-near-me/lib/jira_near_me/project.rb	/^    def version(tag)$/;"	method	line:123	class:JiraNearMe.Project
+last_version_for_region	/Users/leming/code/jira-near-me/lib/jira_near_me/project.rb	/^    def last_version_for_region(region, current_tag)$/;"	method	line:127	class:JiraNearMe.Project
+versions_before	/Users/leming/code/jira-near-me/lib/jira_near_me/project.rb	/^    def versions_before(current_tag)$/;"	method	line:133	class:JiraNearMe.Project
+versions	/Users/leming/code/jira-near-me/lib/jira_near_me/project.rb	/^    def versions$/;"	method	line:143	class:JiraNearMe.Project.versions_before
+release_version	/Users/leming/code/jira-near-me/lib/jira_near_me/project.rb	/^    def release_version(tag)$/;"	method	line:147	class:JiraNearMe.Project.versions_before

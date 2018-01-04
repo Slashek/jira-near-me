@@ -7,7 +7,7 @@ after each release.
 
 to install the gem type
 
-    $ gem install jira-near-me-0.1.2.gem
+    $ gem install jira-near-me-0.1.3.gem
 
 next, add ENV variable (preferably, add it to ~/.bash_profile or something like this)
 
@@ -19,21 +19,21 @@ next, add ENV variable (preferably, add it to ~/.bash_profile or something like 
 
 If you are using the gem in frontend repo for the first time, you might want to do following: checkout to the first commit, add a first tag and then checkout to master, something like:
 
+    git checkout master
     git tag -a 0.0.1 -m 'init'
     git push --tags
-    git checkout master
 
 Then you will be able to use JiraNearMe for both marketplaces and core app. There are 2 available commands:
 
-- `release` - creates proper fixVersion based on last tag and region, then assigns all tickets to that version. DO NOT FORGET TO PUSH TAG AFTER YOU CREATE IT via `gem push --tags`. Available parameters are:
+- `release` - creates proper fixVersion based on last tag and region, then assigns all tickets to that version and post release notes to Slack channel. Available parameters are:
 
       $ jira-near-me release
 
-  - `skip_tag_create=true` if you've already created tag manually. By default tag will be generated automatically.
+  - `skip-tag-create` if you've already created tag manually. By default tag will be generated automatically.
   - `region` when core app is released. Asked when skipped.
-
-- `release_version` - release versions in jira and post release notes to slack.
-
-      $ jira-near-me release_version
+  - `skip-confirmation` if you want to skip all CLI questions
 
 
+For more information use
+
+      $ jira-near-me help

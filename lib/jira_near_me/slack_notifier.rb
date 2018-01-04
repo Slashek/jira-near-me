@@ -1,4 +1,6 @@
 # frozen_string_literal: true
+require 'slack-notifier'
+
 module JiraNearMe
   class SlackNotifier
     def ping(message, options)
@@ -8,6 +10,7 @@ module JiraNearMe
     end
 
     private
+
     def slack_notifier
       @slack_notifier ||= Slack::Notifier.new(slack_url)
     end

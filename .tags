@@ -1,0 +1,159 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	0	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+sudo	/Users/leming/code/jira-near-me/.travis.yml	/^sudo: false$/;"	function	line:1
+language	/Users/leming/code/jira-near-me/.travis.yml	/^language: ruby$/;"	function	line:2
+rvm	/Users/leming/code/jira-near-me/.travis.yml	/^rvm:$/;"	function	line:3
+before_install	/Users/leming/code/jira-near-me/.travis.yml	/^before_install: gem install bundler -v 1.13.6$/;"	function	line:5
+JiraNearMe	/Users/leming/code/jira-near-me/lib/jira_near_me/card_printer.rb	/^module JiraNearMe$/;"	module	line:1
+CardPrinter	/Users/leming/code/jira-near-me/lib/jira_near_me/card_printer.rb	/^  class CardPrinter$/;"	class	line:2	class:JiraNearMe
+initialize	/Users/leming/code/jira-near-me/lib/jira_near_me/card_printer.rb	/^    def initialize$/;"	method	line:3	class:JiraNearMe.CardPrinter
+print	/Users/leming/code/jira-near-me/lib/jira_near_me/card_printer.rb	/^    def print(issue_hash)$/;"	method	line:6	class:JiraNearMe.CardPrinter
+JiraNearMe	/Users/leming/code/jira-near-me/lib/jira_near_me/cli.rb	/^module JiraNearMe$/;"	module	line:7
+CLI	/Users/leming/code/jira-near-me/lib/jira_near_me/cli.rb	/^  class CLI < Thor$/;"	class	line:9	class:JiraNearMe
+release	/Users/leming/code/jira-near-me/lib/jira_near_me/cli.rb	/^    def release$/;"	method	line:28	class:JiraNearMe.CLI
+options	/Users/leming/code/jira-near-me/lib/jira_near_me/cli.rb	/^    def options$/;"	method	line:32	class:JiraNearMe.CLI
+releaser	/Users/leming/code/jira-near-me/lib/jira_near_me/cli.rb	/^      def releaser$/;"	method	line:39	class:JiraNearMe.CLI
+JiraNearMe	/Users/leming/code/jira-near-me/lib/jira_near_me/client.rb	/^module JiraNearMe$/;"	module	line:4
+Client	/Users/leming/code/jira-near-me/lib/jira_near_me/client.rb	/^  class Client$/;"	class	line:5	class:JiraNearMe
+initialize	/Users/leming/code/jira-near-me/lib/jira_near_me/client.rb	/^    def initialize$/;"	method	line:18	class:JiraNearMe.Client
+JiraNearMe	/Users/leming/code/jira-near-me/lib/jira_near_me/errors/jira_near_me_error.rb	/^module JiraNearMe$/;"	module	line:1
+Errors	/Users/leming/code/jira-near-me/lib/jira_near_me/errors/jira_near_me_error.rb	/^  module Errors$/;"	module	line:2	class:JiraNearMe
+JiraNearMeError	/Users/leming/code/jira-near-me/lib/jira_near_me/errors/jira_near_me_error.rb	/^    class JiraNearMeError < StandardError$/;"	class	line:3	class:JiraNearMe.Errors
+JiraNearMe	/Users/leming/code/jira-near-me/lib/jira_near_me/git/commit_helper.rb	/^module JiraNearMe$/;"	module	line:1
+Git	/Users/leming/code/jira-near-me/lib/jira_near_me/git/commit_helper.rb	/^  module Git$/;"	module	line:2	class:JiraNearMe
+CommitHelper	/Users/leming/code/jira-near-me/lib/jira_near_me/git/commit_helper.rb	/^    class CommitHelper$/;"	class	line:3	class:JiraNearMe.Git
+commits_between_revisions	/Users/leming/code/jira-near-me/lib/jira_near_me/git/commit_helper.rb	/^      def commits_between_revisions(base_revision, new_revision)$/;"	method	line:4	class:JiraNearMe.Git.CommitHelper
+JiraNearMe	/Users/leming/code/jira-near-me/lib/jira_near_me/git.rb	/^module JiraNearMe$/;"	module	line:6
+Git	/Users/leming/code/jira-near-me/lib/jira_near_me/git.rb	/^  module Git$/;"	module	line:7	class:JiraNearMe
+JiraNearMe	/Users/leming/code/jira-near-me/lib/jira_near_me/issue.rb	/^module JiraNearMe$/;"	module	line:3
+Issue	/Users/leming/code/jira-near-me/lib/jira_near_me/issue.rb	/^  class Issue$/;"	class	line:4	class:JiraNearMe
+initialize	/Users/leming/code/jira-near-me/lib/jira_near_me/issue.rb	/^    def initialize(issue, project_wrapper)$/;"	method	line:9	class:JiraNearMe.Issue
+to_hash	/Users/leming/code/jira-near-me/lib/jira_near_me/issue.rb	/^    def to_hash$/;"	method	line:14	class:JiraNearMe.Issue
+epic_for_issue	/Users/leming/code/jira-near-me/lib/jira_near_me/issue.rb	/^    def epic_for_issue(issue)$/;"	method	line:26	class:JiraNearMe.Issue
+assign_version	/Users/leming/code/jira-near-me/lib/jira_near_me/issue.rb	/^    def assign_version(version)$/;"	method	line:30	class:JiraNearMe.Issue
+released_for_region?	/Users/leming/code/jira-near-me/lib/jira_near_me/issue.rb	/^    def released_for_region?(region)$/;"	method	line:40	class:JiraNearMe.Issue
+assigned_versions	/Users/leming/code/jira-near-me/lib/jira_near_me/issue.rb	/^    def assigned_versions$/;"	method	line:50	class:JiraNearMe.Issue
+available_transitions	/Users/leming/code/jira-near-me/lib/jira_near_me/issue.rb	/^    def available_transitions$/;"	method	line:54	class:JiraNearMe.Issue
+JiraNearMe	/Users/leming/code/jira-near-me/lib/jira_near_me/region_option_parser.rb	/^module JiraNearMe$/;"	module	line:3
+RegionOptionParser	/Users/leming/code/jira-near-me/lib/jira_near_me/region_option_parser.rb	/^  class RegionOptionParser$/;"	class	line:5	class:JiraNearMe
+initialize	/Users/leming/code/jira-near-me/lib/jira_near_me/region_option_parser.rb	/^    def initialize(options)$/;"	method	line:9	class:JiraNearMe.RegionOptionParser
+ask_for_region	/Users/leming/code/jira-near-me/lib/jira_near_me/region_option_parser.rb	/^    def ask_for_region$/;"	method	line:15	class:JiraNearMe.RegionOptionParser
+info_message	/Users/leming/code/jira-near-me/lib/jira_near_me/region_option_parser.rb	/^    def info_message$/;"	method	line:24	class:JiraNearMe.RegionOptionParser
+messanger	/Users/leming/code/jira-near-me/lib/jira_near_me/region_option_parser.rb	/^    def messanger$/;"	method	line:32	class:JiraNearMe.RegionOptionParser
+valid?	/Users/leming/code/jira-near-me/lib/jira_near_me/region_option_parser.rb	/^    def valid?$/;"	method	line:36	class:JiraNearMe.RegionOptionParser
+JiraNearMe	/Users/leming/code/jira-near-me/lib/jira_near_me/version.rb	/^module JiraNearMe$/;"	module	line:1
+JiraNearMe	/Users/leming/code/jira-near-me/lib/jira_near_me.rb	/^module JiraNearMe$/;"	module	line:13
+marketplace_release	/Users/leming/code/jira-near-me/lib/jira_near_me.rb	/^  def self.marketplace_release?$/;"	singleton method	line:16	class:JiraNearMe
+builder_folder	/Users/leming/code/jira-near-me/lib/jira_near_me.rb	/^  def self.builder_folder$/;"	singleton method	line:20	class:JiraNearMe
+marketplace_name	/Users/leming/code/jira-near-me/lib/jira_near_me.rb	/^  def self.marketplace_name$/;"	singleton method	line:24	class:JiraNearMe
+JiraNearMe	/Users/leming/code/jira-near-me/README.md	/^# JiraNearMe$/;"	function	line:1
+Installation	/Users/leming/code/jira-near-me/README.md	/^## Installation$/;"	function	line:6
+Usage	/Users/leming/code/jira-near-me/README.md	/^## Usage$/;"	function	line:18
+JiraNearMe	/Users/leming/code/jira-near-me/lib/jira_near_me/slack_notifier.rb	/^module JiraNearMe$/;"	module	line:4
+SlackNotifier	/Users/leming/code/jira-near-me/lib/jira_near_me/slack_notifier.rb	/^  class SlackNotifier$/;"	class	line:5	class:JiraNearMe
+ping	/Users/leming/code/jira-near-me/lib/jira_near_me/slack_notifier.rb	/^    def ping(message, options)$/;"	method	line:6	class:JiraNearMe.SlackNotifier
+slack_notifier	/Users/leming/code/jira-near-me/lib/jira_near_me/slack_notifier.rb	/^    def slack_notifier$/;"	method	line:14	class:JiraNearMe.SlackNotifier
+slack_url	/Users/leming/code/jira-near-me/lib/jira_near_me/slack_notifier.rb	/^    def slack_url$/;"	method	line:18	class:JiraNearMe.SlackNotifier
+slack_api_key	/Users/leming/code/jira-near-me/lib/jira_near_me/slack_notifier.rb	/^    def slack_api_key$/;"	method	line:22	class:JiraNearMe.SlackNotifier
+error	/Users/leming/code/jira-near-me/lib/jira_near_me/slack_notifier.rb	/^    def error$/;"	method	line:26	class:JiraNearMe.SlackNotifier
+JiraNearMe	/Users/leming/code/jira-near-me/lib/jira_near_me/git/tag.rb	/^module JiraNearMe$/;"	module	line:1
+Git	/Users/leming/code/jira-near-me/lib/jira_near_me/git/tag.rb	/^  module Git$/;"	module	line:2	class:JiraNearMe
+Tag	/Users/leming/code/jira-near-me/lib/jira_near_me/git/tag.rb	/^    class Tag$/;"	class	line:3	class:JiraNearMe.Git
+initialize	/Users/leming/code/jira-near-me/lib/jira_near_me/git/tag.rb	/^      def initialize(tag, description=nil)$/;"	method	line:4	class:JiraNearMe.Git.Tag
+region	/Users/leming/code/jira-near-me/lib/jira_near_me/git/tag.rb	/^      def region$/;"	method	line:9	class:JiraNearMe.Git.Tag
+base_tag	/Users/leming/code/jira-near-me/lib/jira_near_me/git/tag.rb	/^      def base_tag$/;"	method	line:13	class:JiraNearMe.Git.Tag
+to_s	/Users/leming/code/jira-near-me/lib/jira_near_me/git/tag.rb	/^      def to_s$/;"	method	line:17	class:JiraNearMe.Git.Tag
+major_version	/Users/leming/code/jira-near-me/lib/jira_near_me/git/tag.rb	/^      def major_version$/;"	method	line:21	class:JiraNearMe.Git.Tag
+next_tag	/Users/leming/code/jira-near-me/lib/jira_near_me/git/tag.rb	/^      def next_tag(major: true, description:)$/;"	method	line:25	class:JiraNearMe.Git.Tag
+previous_tag	/Users/leming/code/jira-near-me/lib/jira_near_me/git/tag.rb	/^      def previous_tag$/;"	method	line:36	class:JiraNearMe.Git.Tag
+previous_tag_command	/Users/leming/code/jira-near-me/lib/jira_near_me/git/tag.rb	/^      def previous_tag_command$/;"	method	line:40	class:JiraNearMe.Git.Tag
+save	/Users/leming/code/jira-near-me/lib/jira_near_me/git/tag.rb	/^      def save$/;"	method	line:44	class:JiraNearMe.Git.Tag
+JiraNearMeTest	/Users/leming/code/jira-near-me/test/jira_near_me_test.rb	/^class JiraNearMeTest < Minitest::Test$/;"	class	line:7
+test_that_it_has_a_version_number	/Users/leming/code/jira-near-me/test/jira_near_me_test.rb	/^  def test_that_it_has_a_version_number$/;"	method	line:8	class:JiraNearMeTest
+test_valid_region	/Users/leming/code/jira-near-me/test/jira_near_me_test.rb	/^  def test_valid_region$/;"	method	line:12	class:JiraNearMeTest
+test_invalid_region	/Users/leming/code/jira-near-me/test/jira_near_me_test.rb	/^  def test_invalid_region$/;"	method	line:17	class:JiraNearMeTest
+test_create_tag	/Users/leming/code/jira-near-me/test/jira_near_me_test.rb	/^  def test_create_tag$/;"	method	line:26	class:JiraNearMeTest
+test_print_release_info	/Users/leming/code/jira-near-me/test/jira_near_me_test.rb	/^  def test_print_release_info$/;"	method	line:36	class:JiraNearMeTest
+fake_marketplace_release	/Users/leming/code/jira-near-me/test/jira_near_me_test.rb	/^  def fake_marketplace_release$/;"	method	line:46	class:JiraNearMeTest
+fake_slack	/Users/leming/code/jira-near-me/test/jira_near_me_test.rb	/^  def fake_slack$/;"	method	line:53	class:JiraNearMeTest
+commit_list	/Users/leming/code/jira-near-me/test/jira_near_me_test.rb	/^  def commit_list$/;"	method	line:58	class:JiraNearMeTest
+projects	/Users/leming/code/jira-near-me/test/jira_near_me_test.rb	/^  def projects$/;"	method	line:62	class:JiraNearMeTest
+jira_client	/Users/leming/code/jira-near-me/test/jira_near_me_test.rb	/^  def jira_client$/;"	method	line:66	class:JiraNearMeTest
+jira_project	/Users/leming/code/jira-near-me/test/jira_near_me_test.rb	/^  def jira_project$/;"	method	line:70	class:JiraNearMeTest
+FakeNotifier	/Users/leming/code/jira-near-me/test/jira_near_me_test.rb	/^  class FakeNotifier$/;"	class	line:74	class:JiraNearMeTest
+ping	/Users/leming/code/jira-near-me/test/jira_near_me_test.rb	/^    def ping(message, options)$/;"	method	line:75	class:JiraNearMeTest.FakeNotifier
+JiraNearMe	/Users/leming/code/jira-near-me/lib/jira_near_me/git/tag_helper.rb	/^module JiraNearMe$/;"	module	line:3
+Git	/Users/leming/code/jira-near-me/lib/jira_near_me/git/tag_helper.rb	/^  module Git$/;"	module	line:4	class:JiraNearMe
+TagHelper	/Users/leming/code/jira-near-me/lib/jira_near_me/git/tag_helper.rb	/^    class TagHelper$/;"	class	line:5	class:JiraNearMe.Git
+initialize	/Users/leming/code/jira-near-me/lib/jira_near_me/git/tag_helper.rb	/^      def initialize(region:, previous_tag:)$/;"	method	line:8	class:JiraNearMe.Git.TagHelper
+create_tag	/Users/leming/code/jira-near-me/lib/jira_near_me/git/tag_helper.rb	/^      def create_tag(options = {})$/;"	method	line:13	class:JiraNearMe.Git.TagHelper
+ask_for_tag_type	/Users/leming/code/jira-near-me/lib/jira_near_me/git/tag_helper.rb	/^      def ask_for_tag_type$/;"	method	line:30	class:JiraNearMe.Git.TagHelper
+ask_for_description	/Users/leming/code/jira-near-me/lib/jira_near_me/git/tag_helper.rb	/^      def ask_for_description$/;"	method	line:42	class:JiraNearMe.Git.TagHelper
+ask_for_tag_creation	/Users/leming/code/jira-near-me/lib/jira_near_me/git/tag_helper.rb	/^      def ask_for_tag_creation$/;"	method	line:48	class:JiraNearMe.Git.TagHelper
+current_tag	/Users/leming/code/jira-near-me/lib/jira_near_me/git/tag_helper.rb	/^      def current_tag$/;"	method	line:53	class:JiraNearMe.Git.TagHelper
+previous_tag	/Users/leming/code/jira-near-me/lib/jira_near_me/git/tag_helper.rb	/^      def previous_tag$/;"	method	line:57	class:JiraNearMe.Git.TagHelper
+current_tag_full_name	/Users/leming/code/jira-near-me/lib/jira_near_me/git/tag_helper.rb	/^      def current_tag_full_name$/;"	method	line:61	class:JiraNearMe.Git.TagHelper
+tag_description	/Users/leming/code/jira-near-me/lib/jira_near_me/git/tag_helper.rb	/^      def tag_description$/;"	method	line:69	class:JiraNearMe.Git.TagHelper
+scope_description	/Users/leming/code/jira-near-me/lib/jira_near_me/git/tag_helper.rb	/^      def scope_description$/;"	method	line:73	class:JiraNearMe.Git.TagHelper
+print_log	/Users/leming/code/jira-near-me/lib/jira_near_me/git/tag_helper.rb	/^      def print_log(message)$/;"	method	line:81	class:JiraNearMe.Git.TagHelper
+JiraNearMe	/Users/leming/code/jira-near-me/lib/jira_near_me/releaser.rb	/^module JiraNearMe$/;"	module	line:5
+Releaser	/Users/leming/code/jira-near-me/lib/jira_near_me/releaser.rb	/^  class Releaser$/;"	class	line:8	class:JiraNearMe
+initialize	/Users/leming/code/jira-near-me/lib/jira_near_me/releaser.rb	/^    def initialize(options = {})$/;"	method	line:21	class:JiraNearMe.Releaser
+release	/Users/leming/code/jira-near-me/lib/jira_near_me/releaser.rb	/^    def release$/;"	method	line:25	class:JiraNearMe.Releaser
+release_version	/Users/leming/code/jira-near-me/lib/jira_near_me/releaser.rb	/^    def release_version$/;"	method	line:33	class:JiraNearMe.Releaser
+release_notes	/Users/leming/code/jira-near-me/lib/jira_near_me/releaser.rb	/^    def release_notes$/;"	method	line:43	class:JiraNearMe.Releaser
+commits	/Users/leming/code/jira-near-me/lib/jira_near_me/releaser.rb	/^    def commits$/;"	method	line:49	class:JiraNearMe.Releaser.release_notes
+last_project_tag	/Users/leming/code/jira-near-me/lib/jira_near_me/releaser.rb	/^    def last_project_tag$/;"	method	line:55	class:JiraNearMe.Releaser.release_notes
+nm_project	/Users/leming/code/jira-near-me/lib/jira_near_me/releaser.rb	/^    def nm_project$/;"	method	line:60	class:JiraNearMe.Releaser.release_notes
+find_projects	/Users/leming/code/jira-near-me/lib/jira_near_me/releaser.rb	/^    def find_projects$/;"	method	line:64	class:JiraNearMe.Releaser.release_notes
+find_project	/Users/leming/code/jira-near-me/lib/jira_near_me/releaser.rb	/^    def find_project(project_key)$/;"	method	line:74	class:JiraNearMe.Releaser.release_notes
+all_projects	/Users/leming/code/jira-near-me/lib/jira_near_me/releaser.rb	/^    def all_projects$/;"	method	line:81	class:JiraNearMe.Releaser.release_notes
+projects	/Users/leming/code/jira-near-me/lib/jira_near_me/releaser.rb	/^    def projects$/;"	method	line:89	class:JiraNearMe.Releaser.release_notes
+git_commit_helper	/Users/leming/code/jira-near-me/lib/jira_near_me/releaser.rb	/^    def git_commit_helper$/;"	method	line:93	class:JiraNearMe.Releaser.release_notes
+git_tag_helper	/Users/leming/code/jira-near-me/lib/jira_near_me/releaser.rb	/^    def git_tag_helper$/;"	method	line:97	class:JiraNearMe.Releaser.release_notes
+jira_commits	/Users/leming/code/jira-near-me/lib/jira_near_me/releaser.rb	/^    def jira_commits$/;"	method	line:103	class:JiraNearMe.Releaser.release_notes
+issues_keys	/Users/leming/code/jira-near-me/lib/jira_near_me/releaser.rb	/^    def issues_keys$/;"	method	line:107	class:JiraNearMe.Releaser.release_notes
+grouped_project_issuee_keys	/Users/leming/code/jira-near-me/lib/jira_near_me/releaser.rb	/^    def grouped_project_issuee_keys$/;"	method	line:113	class:JiraNearMe.Releaser.release_notes.issues_keys
+client	/Users/leming/code/jira-near-me/lib/jira_near_me/releaser.rb	/^    def client$/;"	method	line:119	class:JiraNearMe.Releaser.release_notes.issues_keys
+messanger	/Users/leming/code/jira-near-me/lib/jira_near_me/releaser.rb	/^    def messanger$/;"	method	line:123	class:JiraNearMe.Releaser.release_notes.issues_keys
+region	/Users/leming/code/jira-near-me/lib/jira_near_me/releaser.rb	/^    def region$/;"	method	line:127	class:JiraNearMe.Releaser.release_notes.issues_keys
+JiraNearMe	/Users/leming/code/jira-near-me/lib/jira_near_me/messanger.rb	/^module JiraNearMe$/;"	module	line:3
+Messanger	/Users/leming/code/jira-near-me/lib/jira_near_me/messanger.rb	/^  class Messanger$/;"	class	line:4	class:JiraNearMe
+print_release_info	/Users/leming/code/jira-near-me/lib/jira_near_me/messanger.rb	/^    def print_release_info(projects, commits, options)$/;"	method	line:7	class:JiraNearMe.Messanger
+print_user_confirmation	/Users/leming/code/jira-near-me/lib/jira_near_me/messanger.rb	/^    def print_user_confirmation$/;"	method	line:14	class:JiraNearMe.Messanger
+print_release_notes	/Users/leming/code/jira-near-me/lib/jira_near_me/messanger.rb	/^    def print_release_notes(release_notes)$/;"	method	line:24	class:JiraNearMe.Messanger
+card_printer	/Users/leming/code/jira-near-me/lib/jira_near_me/messanger.rb	/^    def card_printer$/;"	method	line:30	class:JiraNearMe.Messanger
+print_pre_release_message	/Users/leming/code/jira-near-me/lib/jira_near_me/messanger.rb	/^    def print_pre_release_message(projects)$/;"	method	line:34	class:JiraNearMe.Messanger
+log	/Users/leming/code/jira-near-me/lib/jira_near_me/messanger.rb	/^    def log(message_name, options = {})$/;"	method	line:52	class:JiraNearMe.Messanger
+slack	/Users/leming/code/jira-near-me/lib/jira_near_me/messanger.rb	/^    def slack(message_name)$/;"	method	line:57	class:JiraNearMe.Messanger
+message	/Users/leming/code/jira-near-me/lib/jira_near_me/messanger.rb	/^    def message(message_name)$/;"	method	line:61	class:JiraNearMe.Messanger
+messages	/Users/leming/code/jira-near-me/lib/jira_near_me/messanger.rb	/^    def messages$/;"	method	line:65	class:JiraNearMe.Messanger
+git_user_name	/Users/leming/code/jira-near-me/lib/jira_near_me/messanger.rb	/^    def git_user_name$/;"	method	line:73	class:JiraNearMe.Messanger
+marketplace_release_messages	/Users/leming/code/jira-near-me/lib/jira_near_me/messanger.rb	/^    def marketplace_release_messages$/;"	method	line:77	class:JiraNearMe.Messanger
+platform_release_messages	/Users/leming/code/jira-near-me/lib/jira_near_me/messanger.rb	/^    def platform_release_messages$/;"	method	line:85	class:JiraNearMe.Messanger
+common_messages	/Users/leming/code/jira-near-me/lib/jira_near_me/messanger.rb	/^    def common_messages$/;"	method	line:93	class:JiraNearMe.Messanger
+print_log	/Users/leming/code/jira-near-me/lib/jira_near_me/messanger.rb	/^    def print_log(message_log)$/;"	method	line:103	class:JiraNearMe.Messanger
+slack_notifier	/Users/leming/code/jira-near-me/lib/jira_near_me/messanger.rb	/^    def slack_notifier$/;"	method	line:107	class:JiraNearMe.Messanger
+JiraNearMe	/Users/leming/code/jira-near-me/lib/jira_near_me/project.rb	/^module JiraNearMe$/;"	module	line:3
+Project	/Users/leming/code/jira-near-me/lib/jira_near_me/project.rb	/^  class Project$/;"	class	line:4	class:JiraNearMe
+initialize	/Users/leming/code/jira-near-me/lib/jira_near_me/project.rb	/^    def initialize(client, project, issue_keys = [])$/;"	method	line:8	class:JiraNearMe.Project
+assign_and_release_version	/Users/leming/code/jira-near-me/lib/jira_near_me/project.rb	/^    def assign_and_release_version(git_tag_helper)$/;"	method	line:16	class:JiraNearMe.Project.initialize
+release_notes	/Users/leming/code/jira-near-me/lib/jira_near_me/project.rb	/^    def release_notes(fix_version_name)$/;"	method	line:24	class:JiraNearMe.Project.initialize
+assign_version	/Users/leming/code/jira-near-me/lib/jira_near_me/project.rb	/^    def assign_version(version, description)$/;"	method	line:31	class:JiraNearMe.Project.initialize
+filter_keys	/Users/leming/code/jira-near-me/lib/jira_near_me/project.rb	/^    def filter_keys(issue_keys)$/;"	method	line:50	class:JiraNearMe.Project.initialize
+issues	/Users/leming/code/jira-near-me/lib/jira_near_me/project.rb	/^    def issues$/;"	method	line:54	class:JiraNearMe.Project.initialize
+issues_count	/Users/leming/code/jira-near-me/lib/jira_near_me/project.rb	/^    def issues_count$/;"	method	line:58	class:JiraNearMe.Project.initialize
+find_project_issues	/Users/leming/code/jira-near-me/lib/jira_near_me/project.rb	/^    def find_project_issues(issue_keys)$/;"	method	line:62	class:JiraNearMe.Project.initialize
+find_project_issue	/Users/leming/code/jira-near-me/lib/jira_near_me/project.rb	/^    def find_project_issue(issue_key)$/;"	method	line:70	class:JiraNearMe.Project.initialize
+ensure_version_present!	/Users/leming/code/jira-near-me/lib/jira_near_me/project.rb	/^    def ensure_version_present!(name:, description:)$/;"	method	line:76	class:JiraNearMe.Project.initialize
+epic_hash	/Users/leming/code/jira-near-me/lib/jira_near_me/project.rb	/^    def epic_hash$/;"	method	line:108	class:JiraNearMe.Project
+has_versions?	/Users/leming/code/jira-near-me/lib/jira_near_me/project.rb	/^    def has_versions?$/;"	method	line:119	class:JiraNearMe.Project
+version	/Users/leming/code/jira-near-me/lib/jira_near_me/project.rb	/^    def version(tag)$/;"	method	line:123	class:JiraNearMe.Project
+last_version_for_region	/Users/leming/code/jira-near-me/lib/jira_near_me/project.rb	/^    def last_version_for_region(region, current_tag)$/;"	method	line:127	class:JiraNearMe.Project
+versions_before	/Users/leming/code/jira-near-me/lib/jira_near_me/project.rb	/^    def versions_before(current_tag)$/;"	method	line:133	class:JiraNearMe.Project
+versions	/Users/leming/code/jira-near-me/lib/jira_near_me/project.rb	/^    def versions$/;"	method	line:143	class:JiraNearMe.Project.versions_before
+release_version	/Users/leming/code/jira-near-me/lib/jira_near_me/project.rb	/^    def release_version(tag)$/;"	method	line:147	class:JiraNearMe.Project.versions_before
