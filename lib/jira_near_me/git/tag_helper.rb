@@ -44,8 +44,6 @@ module JiraNearMe
       end
 
       def ask_for_tag_creation
-        binding.pry
-
         print_log 'Would you like to create new tag? [y|n] \n'
         STDIN.gets.strip == 'y'
       end

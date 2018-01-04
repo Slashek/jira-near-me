@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require 'thor'
-require 'slack-notifier'
 require 'jira_near_me'
 
 module JiraNearMe

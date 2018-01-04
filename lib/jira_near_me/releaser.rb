@@ -1,5 +1,4 @@
 require 'jira-ruby'
-require 'chronic'
 
 module JiraNearMe
   class Releaser
@@ -9,21 +8,20 @@ module JiraNearMe
     TAG_OPTIONS = %w[skip_tag_create tag_type description].freeze
 
     attr_reader :description, :region, :tag_options,
-                :skip_confirmation
+                :skip_confirmation, :options
 
 
-    def initialize(options={})
+    def initialize(options = {})
+      @options = options
+
       unless marketplace_release?
         @region = options[:region] || messanger.ask_for_region
         messanger.verify_region(@region)
       end
-
-      @tag_options = options.select { |key, _| TAG_OPTIONS.include?(key) }
-      @skip_confirmation = options.key?('skip_confirmation')
     end
 
     def release
-      git_tag_helper.create_tag(tag_options)
+      git_tag_helper.create_tag(options)
       messanger.print_release_info(projects)
       assign_fix_version
       release_version
@@ -133,7 +131,7 @@ module JiraNearMe
     end
 
     def messanger
-      @messanger = Messanger.new
+      @messanger = Messanger.new(skip_confirmation: options.key?('skip_confirmation'))
     end
   end
 end

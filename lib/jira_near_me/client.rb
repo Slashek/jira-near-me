@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 require 'jira-ruby'
-require 'chronic'
 
 module JiraNearMe
   class Client

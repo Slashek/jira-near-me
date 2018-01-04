@@ -36,7 +36,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "jira-ruby", "~> 1.4.3"
 
   spec.add_dependency "jira-ruby", "~> 1.4.3"
-  spec.add_dependency "chronic"
   spec.add_dependency "thor"
   spec.add_dependency "slack-notifier"
 end

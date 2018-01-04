@@ -1,4 +1,5 @@
 require 'test_helper'
+require 'jira_near_me'
 
 class JiraNearMeTest < Minitest::Test
   def test_that_it_has_a_version_number
@@ -10,5 +11,4 @@ class JiraNearMeTest < Minitest::Test
     jira_releaser.release
     assert true
   end
-
 end
