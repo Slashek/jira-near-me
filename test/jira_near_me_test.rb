@@ -26,4 +26,9 @@ class JiraNearMeTest < Minitest::Test
 
     assert @region.valid?
   end
+
+  def test_create_tag
+    releaser = JiraNearMe::Releaser.new({})
+    releaser.create_tag
+  end
 end

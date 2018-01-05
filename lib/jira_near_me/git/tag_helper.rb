@@ -1,13 +1,15 @@
+# frozen_string_literal: true
+
 module JiraNearMe
   module Git
     class TagHelper
       attr_reader :marketplace_release
 
-      def initialize(marketplace_release: )
+      def initialize(marketplace_release:)
         @marketplace_release = marketplace_release
       end
 
-      def create_tag!(options={})
+      def create_tag!(options = {})
         @skip_tag_create = options['skip_tag_create']
         @skip_confirmation = options['skip_confirmation']
 
@@ -19,7 +21,7 @@ module JiraNearMe
 
         next_tag = current_tag.next_tag(
           major: tag_type.to_sym == :major,
-          description: description,
+          description: description
         )
 
         next_tag.save
@@ -29,10 +31,10 @@ module JiraNearMe
         print_log 'Is this a major release?: [y|n] \n'
 
         if STDIN.gets.strip == 'y'
-          print_log "Proceeding with major release"
+          print_log 'Proceeding with major release'
           :major
         else
-          print_log "Proceeding with hotfix release"
+          print_log 'Proceeding with hotfix release'
           :minor
         end
       end
@@ -50,9 +52,9 @@ module JiraNearMe
 
       def scope_description
         if current_tag.major_version != previous_tag.major_version
-          "Regular Release"
+          'Regular Release'
         else
-          "Hotfix"
+          'Hotfix'
         end
       end
 
@@ -73,7 +75,7 @@ module JiraNearMe
       end
 
       def tag_description
-        "#{marketplace_release ? "Frontend" : "Backend"} #{scope_description}"
+        "#{marketplace_release ? 'Frontend' : 'Backend'} #{scope_description}"
       end
 
       def print_log(message)

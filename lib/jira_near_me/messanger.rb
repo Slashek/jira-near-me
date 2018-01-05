@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 module JiraNearMe
   class Messanger
     attr_reader :options
 
     def print_release_info(projects)
       log(:print_commit_info,
-        commits_log: commits.map { |commit| commit }.join("\n") )
+          commits_log: commits.map { |commit| commit }.join("\n"))
       print_pre_release_message(projects)
       print_user_confirmation unless skip_confirmation
     end
@@ -21,7 +23,7 @@ module JiraNearMe
 
     def print_release_notes(release_notes)
       log(:version_released)
-      slack(:slack_release_info, { release_notes: release_notes })
+      slack(:slack_release_info, release_notes: release_notes)
     end
 
     def card_printer
@@ -46,7 +48,6 @@ module JiraNearMe
                 #{@total_issues_count}"
       print_log "\nFix version #{@version} will be assigned to all projects and
                 issues.\n"
-
     end
 
     def log(message_name, options = {})
