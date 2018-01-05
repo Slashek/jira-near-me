@@ -20,10 +20,10 @@ class JiraNearMeTest < Minitest::Test
   end
 
   def test_invalid_region
+    STDIN.stub :gets, '0' do
+      @region = JiraNearMe::RegionOptionParser.new(region: 'ioregon')
+    end
 
-    region = JiraNearMe::RegionOptionParser.new(region: 'ioregon')
-    binding.pry
-
-    assert region.valid?
+    assert @region.valid?
   end
 end

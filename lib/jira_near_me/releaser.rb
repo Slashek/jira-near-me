@@ -1,7 +1,10 @@
 # frozen_string_literal: true
+
 require 'jira-ruby'
 
 module JiraNearMe
+  # Releaser is a entry class for the script that manage entire release process.
+
   class Releaser
     extend Forwardable
 
@@ -11,7 +14,9 @@ module JiraNearMe
     attr_reader :description, :region, :tag_options,
                 :skip_confirmation, :options
 
-    def_delegators :@git_tag_helper, :current_tag, :previous_tag, :current_tag_full_name
+    def_delegators :@git_tag_helper, :create_tag, :current_tag, :previous_tag,
+                   :current_tag_full_name
+    def_delegators :@messanger, :print_release_info
 
     def initialize(options = {})
       @options = options
@@ -19,8 +24,8 @@ module JiraNearMe
     end
 
     def release
-      git_tag_helper.create_tag(options)
-      messanger.print_release_info(projects)
+      create_tag(options)
+      print_release_info(projects)
       release_version
     end
 
