@@ -17,7 +17,7 @@ module JiraNearMe
       return unless (v = version(fix_version_name)).present?
 
       release_notes_url = "https://near-me.atlassian.net/secure/ReleaseNote.jspa?projectId=#{project.id}&version=#{v.id}"
-      "<a href='#{release_notes_url}'>Check #{project.name} #{JiraNearMe.used_for_marketplace? ? 'Frontend ' : ''}Release Notes</a>."
+      "<a href='#{release_notes_url}'>Check #{project.name} #{JiraNearMe.marketplace_release? ? 'Frontend ' : ''}Release Notes</a>."
     end
 
     def assign_version(version, description)
@@ -133,7 +133,7 @@ module JiraNearMe
       @versions ||= project.versions || []
     end
 
-    def release_version!(tag)
+    def release_version(tag)
       if version(tag)
         version(tag).save(released: true)
         puts "Version #{tag} for project #{project.name} released."

@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require 'jira-ruby'
 
 module JiraNearMe
@@ -10,34 +11,29 @@ module JiraNearMe
     attr_reader :description, :region, :tag_options,
                 :skip_confirmation, :options
 
+    def_delegators :@git_tag_helper, :current_tag, :previous_tag, :current_tag_full_name
 
     def initialize(options = {})
       @options = options
-
-      unless marketplace_release?
-        @region = options[:region] || messanger.ask_for_region
-        messanger.verify_region(@region)
-      end
+      @region = RegionParser.new(options).region if JiraNearMe.marketplace_release?
     end
 
     def release
       git_tag_helper.create_tag(options)
       messanger.print_release_info(projects)
-      assign_fix_version
       release_version
     end
 
     private
 
-    def assign_fix_version
-      messanger.log(:assign_fix_version, { current_tag: current_tag })
+    def release_version
+      messanger.log(:assign_fix_version, current_tag: current_tag)
+
       projects.each do |project|
         project.assign_version(current_tag)
+        project.release_version(current_tag_full_name)
       end
-    end
 
-    def release_version
-      projects.each { |project| project.release_version!(current_tag_full_name) }
       messanger.print_release_notes(release_notes)
     end
 
@@ -48,7 +44,9 @@ module JiraNearMe
     end
 
     def commits
-      @commits ||= git_commit_helper.commits_between_revisions(last_tag, current_tag)
+      @commits ||= git_commit_helper.commits_between_revisions(
+        last_tag, current_tag
+      )
     end
 
     def last_tag
@@ -75,7 +73,7 @@ module JiraNearMe
 
     def find_project(project_key)
       client.Project.find(project_key.upcase)
-    rescue
+    rescue JIRA::HTTPError
       puts "Could not find project with key #{project_key}"
       nil
     end
@@ -97,10 +95,8 @@ module JiraNearMe
     end
 
     def git_tag_helper
-      @git_tag_helper ||= Git::TagHelper.new(marketplace_release: marketplace_release?)
+      @git_tag_helper ||= Git::TagHelper.new
     end
-    def_delegators :@git_tag_helper, :current_tag, :previous_tag, :current_tag_full_name
-
 
     def jira_commits
       @jira_commits ||= commits.select { |commit| commit =~ JIRA_FORMAT }
@@ -122,16 +118,12 @@ module JiraNearMe
       @count || issues.count
     end
 
-    def marketplace_release?
-      @marketplace_release ||= JiraNearMe.used_for_marketplace?
-    end
-
     def client
       @client ||= Client.new.client
     end
 
     def messanger
-      @messanger = Messanger.new(skip_confirmation: options.key?('skip_confirmation'))
+      @messanger = Messanger.new
     end
   end
 end

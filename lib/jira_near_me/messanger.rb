@@ -1,28 +1,6 @@
 module JiraNearMe
   class Messanger
-    REGIONS = %w[california sydney oregon].freeze
-
     attr_reader :options
-
-    def verify_region(region)
-      if REGIONS.include?(region)
-        print_log "Proceeding with #{region} region"
-      else
-        print_log 'You need to pass region argument'
-        print_log "allowed regions are: #{REGIONS.join(', ')}"
-        ask_for_region
-      end
-    end
-
-    def ask_for_region
-      messanger.log(:incorrect_region)
-
-      Releaser::REGIONS.each_with_index do |region, index|
-        print_log "#{index}. #{region.capitalize} \n"
-      end
-
-      REGIONS[STDIN.gets.strip.to_i]
-    end
 
     def print_release_info(projects)
       log(:print_commit_info,
@@ -71,9 +49,9 @@ module JiraNearMe
 
     end
 
-    def log(message_name, options)
+    def log(message_name, options = {})
       @options = options
-      puts(message[message_name])
+      puts(message(message_name))
     end
 
     def slack(message_name)
@@ -85,7 +63,7 @@ module JiraNearMe
     end
 
     def messages
-      if JiraNearMe.used_for_marketplace?
+      if JiraNearMe.marketplace_release?
         marketplace_release_messages
       else
         platform_release_messages
@@ -101,7 +79,7 @@ module JiraNearMe
 
     def platform_release_messages
       {
-        slack_release_info: "Backend production release started for #{region}.
+        slack_release_info: "Backend production release started for #{options[:region]}.
                             You can check release notes for each project: \n
                             #{options[:release_notes]} \nDetails in #eng-deploys"
       }.merge(common_messages)
@@ -109,6 +87,7 @@ module JiraNearMe
 
     def common_messages
       {
+        region_set: "Region is set to #{options[:region]}",
         incorrect_region: 'Region argument is incorrect, please choose one of the available options: \n',
         version_released: 'Versions released',
         print_commit_info: "All commits: \n #{options[:commits_log]}",

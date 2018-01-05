@@ -120,7 +120,7 @@ to_hash	lib/jira_near_me/issue.rb	/^    def to_hash$/;"	f	class:JiraNearMe.Issue
 to_jira_number	lib/jira_near_me/releaser.rb	/^    def to_jira_number(array)$/;"	f	class:JiraNearMe.Releaser
 to_s	lib/jira_near_me/git/tag.rb	/^      def to_s$/;"	f	class:JiraNearMe.Git.Tag
 transition_to_qa_test_state	lib/jira_near_me/issue.rb	/^    def transition_to_qa_test_state$/;"	f	class:JiraNearMe.Issue
-used_for_marketplace	lib/jira_near_me.rb	/^  def self.used_for_marketplace?$/;"	F	class:JiraNearMe
+marketplace_release	lib/jira_near_me.rb	/^  def self.marketplace_release?$/;"	F	class:JiraNearMe
 verify_region	lib/jira_near_me/releaser.rb	/^    def verify_region(region)$/;"	f	class:JiraNearMe.Releaser
 version	lib/jira_near_me/project.rb	/^    def version(tag)$/;"	f	class:JiraNearMe.Project.initialize
 versions	lib/jira_near_me/project.rb	/^    def versions$/;"	f	class:JiraNearMe.Project.initialize.versions_before
