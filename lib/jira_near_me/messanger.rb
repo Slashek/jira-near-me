@@ -77,7 +77,7 @@ module JiraNearMe
     def marketplace_release_messages
       {
         slack_release_info: "#{git_user_name} started frontend production " \
-          'release started for '\
+          'release for '\
           "#{JiraNearMe.marketplace_name}.\n#{options[:release_notes]}\n"
       }.merge(common_messages)
     end
